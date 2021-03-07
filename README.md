@@ -10,7 +10,7 @@ It is an Elm implementation of the DDA algorithm popularized by [OneLoneCoder (J
 
 The main idea is that instead of walking the ray by small steps and checking which tile we're in, we instead go all the way to the nearest cell boundary. This uses less CPU and doesn't suffer from inaccuracy (overshooting the finishline, as it were).
 
-![Screenshot](https://github.com/Janiczek/elm-raycasting/raw/main/docs/raycasting.png)
+![Screenshot](https://github.com/Janiczek/elm-raycasting/raw/main/docs/raycast.png)
 
 You can play with a modified version of this code (such that we can visualize the line segments and seen tiles) in [this Ellie](https://ellie-app.com/cyBMhVp2hv2a1).
 
