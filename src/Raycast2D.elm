@@ -63,11 +63,22 @@ floorToMultipleOf d n =
     d * toFloat (symFloor (n / d))
 
 
-{-| This is an Elm implementation of the DDA algorithm popularized by OneLoneCoder (Javidx9).
+{-| This is an Elm implementation of the DDA (Digital Differential Analysis) algorithm popularized by [OneLoneCoder (Javidx9)](https://twitter.com/javidx9).
 
-YouTube video: <https://www.youtube.com/watch?v=NbSee-XM7WA>
-Article: <https://lodev.org/cgtutor/raycasting.html>
-Code: <https://github.com/OneLoneCoder/olcPixelGameEngine/blob/61d0e06766c3dbf7571cbf39d1727b1c8b84fedf/Videos/OneLoneCoder_PGE_RayCastDDA.cpp>
+  - [YouTube video](https://www.youtube.com/watch?v=NbSee-XM7WA)
+
+  - [Article](https://lodev.org/cgtutor/raycasting.html)
+
+  - [Code](https://github.com/OneLoneCoder/olcPixelGameEngine/blob/61d0e06766c3dbf7571cbf39d1727b1c8b84fedf/Videos/OneLoneCoder_PGE_RayCastDDA.cpp)
+
+```elm
+tileSize = 50
+from = (25, 75) -- center of tile (0,1)
+to = (275, 175) -- center of tile (5,3)
+
+touchedTiles tileSize from to
+--> Set.fromList [(0,1),(1,1),(1,2),(2,2),(3,2),(4,2),(4,3),(5,3)]
+```
 
 -}
 touchedTiles : Float -> PxCoords -> PxCoords -> Set TileCoords

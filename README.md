@@ -2,7 +2,16 @@
 
 This package currently hosts a single function: `Raycast2D.touchedTiles`.
 
-It is an Elm implementation of the DDA algorithm popularized by [OneLoneCoder (Javidx9)](https://twitter.com/javidx9).
+```elm
+tileSize = 50
+from = (25, 75) -- center of tile (0,1)
+to = (275, 175) -- center of tile (5,3)
+
+touchedTiles tileSize from to
+--> Set.fromList [(0,1),(1,1),(1,2),(2,2),(3,2),(4,2),(4,3),(5,3)]
+```
+
+It is an Elm implementation of the DDA (Digital Differential Analysis) algorithm popularized by [OneLoneCoder (Javidx9)](https://twitter.com/javidx9).
 
 * [YouTube video](https://www.youtube.com/watch?v=NbSee-XM7WA)
 * [Article](https://lodev.org/cgtutor/raycasting.html)
