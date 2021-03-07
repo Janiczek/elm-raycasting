@@ -1,16 +1,31 @@
 module Raycast2D exposing
-    ( PxCoords
-    , TileCoords
+    ( PxCoords, TileCoords
     , touchedTiles
     )
+
+{-| A library for raycasting geometric tasks in 2D space.
+
+
+# Types
+
+@docs PxCoords, TileCoords
+
+
+# Raycasting
+
+@docs touchedTiles
+
+-}
 
 import Set exposing (Set)
 
 
+{-| -}
 type alias TileCoords =
     ( Int, Int )
 
 
+{-| -}
 type alias PxCoords =
     ( Float, Float )
 
