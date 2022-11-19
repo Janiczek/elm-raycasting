@@ -18,6 +18,7 @@ touchedTiles =
     Test.describe "Raycast2D.touchedTiles"
         [ touchedTilesExampleNondegenerate
         , touchedTilesExampleDiagonal
+        , touchedTilesExampleNegative
         , touchedTilesExampleProblematic1
         , touchedTilesExampleProblematic2
         , touchedTilesExampleProblematic3
@@ -82,6 +83,18 @@ touchedTilesExampleNondegenerate =
                 (tileCenter ( 6, 3 ))
                 |> Expect.equalSets
                     (Set.fromList [ ( 1, 1 ), ( 2, 1 ), ( 2, 2 ), ( 3, 2 ), ( 4, 2 ), ( 5, 2 ), ( 5, 3 ), ( 6, 3 ) ])
+
+
+touchedTilesExampleNegative : Test
+touchedTilesExampleNegative =
+    Test.test "(1,1) -> (-1,-1)" <|
+        \() ->
+            Raycast2D.touchedTiles
+                mapTileSize
+                (tileCenter ( 1, 1 ))
+                (tileCenter ( -1, -1 ))
+                |> Expect.equalSets
+                    (Set.fromList [ ( 1, 1 ), ( 0, 0 ), ( -1, -1 ) ])
 
 
 touchedTilesExampleDiagonal : Test
